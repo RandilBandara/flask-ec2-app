@@ -17,3 +17,5 @@ This is a simple Flask web application deployed on an AWS EC2 instance.
 
 4. **Configured Security Groups**  
    Opened necessary HTTP and HTTPS ports on EC2 Security Groups to allow web traffic.
+   
+IP - 13.201.78.169
