@@ -1,3 +1,4 @@
+
 # Flask EC2 App
 
 ## Overview
@@ -19,3 +20,17 @@ This is a simple Flask web application deployed on an AWS EC2 instance.
    Opened necessary HTTP and HTTPS ports on EC2 Security Groups to allow web traffic.
    
 IP - 13.201.78.169
+=======
+# My Flask EC2 App
+
+This is my Flask app deployed on EC2.
+
+## Screenshots
+
+Here are some screenshots of the app:
+
+![Screenshot 1](images/Screenshot1.png)
+![Screenshot 2](images/Screenshot2.png)
+![Screenshot 3](images/Screenshot3.png)
+
+
