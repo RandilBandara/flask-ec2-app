@@ -3,7 +3,7 @@ name: Flask CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   test:
@@ -15,24 +15,20 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.13
+        python-version: 3.11  # ✅ Use a stable version
 
-    - name: Install dependencies
+    - name: Install dependencies and run tests
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
         pip install pytest
-
-    - name: Run tests
-      run: |
-        source venv/bin/activate
-        pytest test_app.py
+        pytest test_app.py  # ✅ All in one step so virtual env stays active
 
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: success()  # deploy only if tests passed
+    if: success()
 
     steps:
     - name: Deploy to EC2 via SSH
@@ -47,6 +43,7 @@ jobs:
           git pull origin main
           pip install -r requirements.txt
           sudo systemctl restart gunicorn
+
         
        
           
